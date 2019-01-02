@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\PlayerInputController.cs" />
     <None Include="Assets\Packages\Shaders\SeansWater_Deferred.shader" />
     <None Include="Assets\Packages\Shaders\SeansWater.shader" />
+    <None Include="Assets\Shaders\maskShader.shader" />
     <None Include="Assets\Packages\ReadMe.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -306,9 +307,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Work/Unity/SeaBattle/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Work/Unity/SeaBattle/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
