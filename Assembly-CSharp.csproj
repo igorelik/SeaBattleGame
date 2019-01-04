@@ -70,6 +70,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\PlayerInputController.cs" />
     <Compile Include="Assets\Scripts\ShipController.cs" />
+    <Compile Include="Assets\Scripts\TorpedoController.cs" />
     <None Include="Assets\Packages\Shaders\SeansWater_Deferred.shader" />
     <None Include="Assets\Packages\Shaders\SeansWater.shader" />
     <None Include="Assets\Shaders\maskShader.shader" />
