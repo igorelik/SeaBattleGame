@@ -28,4 +28,11 @@ public class TorpedoController : MonoBehaviour
             this.gameObject.transform.position += this.gameObject.transform.right * Speed;
         }
     }
+
+    // OnTriggerEnter is called when the Collider other enters the trigger
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Torpedo collided - BOOM");
+        this.gameObject.SetActive(false);
+    }
 }

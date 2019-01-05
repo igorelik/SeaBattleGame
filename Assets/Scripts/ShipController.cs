@@ -22,6 +22,7 @@ public class ShipController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"ShipController is triggered and melting");
         if (other.transform.gameObject.tag == "Scene")
         {
             Debug.Log($"End of the world. Turning");
