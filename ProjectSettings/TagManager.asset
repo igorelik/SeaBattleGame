@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Scene
   - Torpedo
+  - Target
   layers:
   - Default
   - TransparentFX
