@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pTorpedo
       objectReference: {fileID: 0}
+    - target: {fileID: 2074000305, guid: 2162b7008a90238418a4251121c02431, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 153424202, guid: 2162b7008a90238418a4251121c02431, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -291,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153424202, guid: 2162b7008a90238418a4251121c02431, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 153424202, guid: 2162b7008a90238418a4251121c02431, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -338,7 +342,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492052402}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &439674448
 BoxCollider:
@@ -425,10 +429,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 439674447}
   - {fileID: 129432021}
   - {fileID: 1726725223}
   - {fileID: 188911872}
-  - {fileID: 439674447}
   - {fileID: 4389098136252938179}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -529,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15496b6b8fb1d7647bae063bb19c3b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TorpedoPrefab: {fileID: 2074000305, guid: 2162b7008a90238418a4251121c02431, type: 3}
 --- !u!1001 &536870772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -641,6 +646,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20
@@ -671,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
