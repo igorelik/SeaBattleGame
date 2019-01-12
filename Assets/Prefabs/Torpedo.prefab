@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 153424202}
   - component: {fileID: 2074000306}
   - component: {fileID: 129432022}
-  - component: {fileID: 129432024}
+  - component: {fileID: 1096377541777408464}
   m_Layer: 0
   m_Name: Torpedo
   m_TagString: Torpedo
@@ -135,13 +135,13 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074000305}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 34.2441
-  m_Height: 818.4596
+  m_Height: 773.0425
   m_Direction: 0
-  m_Center: {x: -282.25763, y: 4.1030025, z: 4.8588367}
---- !u!54 &129432024
+  m_Center: {x: -259.54868, y: 4.1030025, z: 4.8588367}
+--- !u!54 &1096377541777408464
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +149,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074000305}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.00001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -212,6 +212,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 33.193
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b6fecef6c92b67147b638a07ef91195b, type: 3}
+      propertyPath: maxDuration
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: b6fecef6c92b67147b638a07ef91195b, type: 3}
       propertyPath: prewarm
       value: 1
@@ -271,10 +275,6 @@ PrefabInstance:
     - target: {fileID: 19800000, guid: b6fecef6c92b67147b638a07ef91195b, type: 3}
       propertyPath: InitialModule.startColor.minMaxState
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: b6fecef6c92b67147b638a07ef91195b, type: 3}
-      propertyPath: maxDuration
-      value: 100000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6fecef6c92b67147b638a07ef91195b, type: 3}

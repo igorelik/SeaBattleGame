@@ -1,13 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
     public float Speed = 1f;
+    public int MaxHits = 1;
+    public Transform ExplosionPrefab;
+    public AudioClip ExplosionEffect;
+
     // Start is called before the first frame update
     private Vector3 _originalPosition;
     private Quaternion _originalRotation;
+    private int _hitCount = 0;
     void Start()
     {
         _originalPosition = this.gameObject.transform.position;
@@ -20,14 +23,22 @@ public class ShipController : MonoBehaviour
         this.gameObject.transform.Translate(Speed, 0, 0);
     }
 
-    private void OnTriggerEnter(Collider other)
+    // OnControllerColliderHit is called when the controller hits a collider while performing a Move
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log($"ShipController OnControllerColliderHit");
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"ShipController is triggered and melting");
-        if (other.transform.gameObject.tag == "Scene")
+        if (collision.rigidbody.gameObject.CompareTag("Torpedo"))
         {
-            Debug.Log($"End of the world. Turning");
-            Speed *= -1;
-            return;
+            var contactPoint = collision.contacts[0];
+            var explosionPosition = new Vector3(contactPoint.point.x, 0, contactPoint.point.z);
+            var explosion = Instantiate(ExplosionPrefab, explosionPosition, Quaternion.LookRotation(Vector3.up));
+            explosion.transform.parent = this.gameObject.transform;
+            AudioSource.PlayClipAtPoint(ExplosionEffect,  explosionPosition);
         }
     }
 
