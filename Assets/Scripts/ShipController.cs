@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro.EditorUtilities;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
     public float Speed = 1f;
     public int MaxHits = 1;
     public Transform ExplosionPrefab;
+    public AudioClip ExplosionEffect;
 
     // Start is called before the first frame update
     private Vector3 _originalPosition;
@@ -39,7 +36,9 @@ public class ShipController : MonoBehaviour
         {
             var contactPoint = collision.contacts[0];
             var explosionPosition = new Vector3(contactPoint.point.x, 0, contactPoint.point.z);
-            Instantiate(ExplosionPrefab, explosionPosition, Quaternion.LookRotation(Vector3.up));
+            var explosion = Instantiate(ExplosionPrefab, explosionPosition, Quaternion.LookRotation(Vector3.up));
+            explosion.transform.parent = this.gameObject.transform;
+            AudioSource.PlayClipAtPoint(ExplosionEffect,  explosionPosition);
         }
     }
 
