@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerInputController : MonoBehaviour
 {
     public GameObject TorpedoPrefab;
     public int TorpedoPerLevel = 10;
+    public float TimeDelayBetweenShots = 1;
     private GameObject _torpedo;
     private TorpedoController _torpedoController;
     private int _torpedoAvailable;
@@ -40,22 +42,25 @@ public class PlayerInputController : MonoBehaviour
         if (_torpedoController != null && !_torpedoController.IsMoving && isFireTrigger)
         {
             Debug.Log($"FIRE!!! {_torpedoAvailable} left");
-           // _torpedo.transform.position = _originalTorpedoPosition;
-            var torpedoRotation = new Quaternion(_torpedo.transform.rotation.x, _torpedo.transform.rotation.y, _torpedo.transform.rotation.z, _torpedo.transform.rotation.w); 
-
             _torpedoController.IsMoving = true;
             _torpedoController = null;
             _torpedoAvailable--;
             if (_torpedoAvailable > 0)
             {
-
-                _torpedo = Instantiate(TorpedoPrefab);
-                _torpedo.name = $"Torpedo{_torpedoAvailable}";
-                _torpedo.transform.SetPositionAndRotation(_originalTorpedoPosition, torpedoRotation);
-                _torpedoController = _torpedo.GetComponent<TorpedoController>();
-                Debug.Log($"New torpedo created. Controller is {_torpedoController}");
-                _originalTorpedoPosition = new Vector3(_torpedo.transform.position.x, _torpedo.transform.position.y, _torpedo.transform.position.z);
+                StartCoroutine(CreateNewTorpedo());
             }
         }
+    }
+
+    private IEnumerator CreateNewTorpedo()
+    {
+        yield return new WaitForSeconds(TimeDelayBetweenShots);
+        _torpedo = Instantiate(TorpedoPrefab);
+        _torpedo.name = $"Torpedo{_torpedoAvailable}";
+        _torpedo.transform.SetPositionAndRotation(_originalTorpedoPosition, this.gameObject.transform.rotation);
+        _torpedo.transform.Rotate(Vector3.up, -90);
+        _torpedoController = _torpedo.GetComponent<TorpedoController>();
+        Debug.Log($"New torpedo created. Controller is {_torpedoController}");
+        _originalTorpedoPosition = new Vector3(_torpedo.transform.position.x, _torpedo.transform.position.y,_torpedo.transform.position.z);
     }
 }

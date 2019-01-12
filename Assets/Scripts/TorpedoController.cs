@@ -39,12 +39,12 @@ public class TorpedoController : MonoBehaviour
     }
 
     // OnTriggerEnter is called when the Collider other enters the trigger
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
+//    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Target"))
+        if (other.transform.gameObject.CompareTag("Target"))
         {
-            Debug.Log("Torpedo collided - BOOM");
+            Debug.Log($"{this.gameObject.name} collided with {other.gameObject.name} - BOOM");
             Object.Destroy(this.gameObject);
             //IsMoving = false;
         }

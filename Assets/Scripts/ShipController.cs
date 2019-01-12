@@ -8,6 +8,7 @@ public class ShipController : MonoBehaviour
 {
     public float Speed = 1f;
     public int MaxHits = 1;
+    public Transform ExplosionPrefab;
 
     // Start is called before the first frame update
     private Vector3 _originalPosition;
@@ -31,17 +32,15 @@ public class ShipController : MonoBehaviour
         Debug.Log($"ShipController OnControllerColliderHit");
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"ShipController is triggered and melting");
-        //if (other.transform.gameObject.tag == "Scene")
-        //{
-        //    Debug.Log($"End of the world. Turning");
-        //    Speed *= -1;
-        //    return;
-        //}
-
-        //other.ClosestPointOnBounds()
+        if (collision.rigidbody.gameObject.CompareTag("Torpedo"))
+        {
+            var contactPoint = collision.contacts[0];
+            var explosionPosition = new Vector3(contactPoint.point.x, 0, contactPoint.point.z);
+            Instantiate(ExplosionPrefab, explosionPosition, Quaternion.LookRotation(Vector3.up));
+        }
     }
 
 }
