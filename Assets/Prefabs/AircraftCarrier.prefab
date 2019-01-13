@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &1145200282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6417240325333126319}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72d4e3936a2db8c4f8d411ecc772b273, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3006848145880641391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +29,7 @@ PrefabInstance:
     - target: {fileID: 6359954488496661218, guid: 5c0dd40ed22d23c46adb9f1494e5077a,
         type: 3}
       propertyPath: m_Name
-      value: Carrier
+      value: AircraftCarrier
       objectReference: {fileID: 0}
     - target: {fileID: 3333524782843946815, guid: 5c0dd40ed22d23c46adb9f1494e5077a,
         type: 3}
@@ -30,17 +49,17 @@ PrefabInstance:
     - target: {fileID: 3333524782843946815, guid: 5c0dd40ed22d23c46adb9f1494e5077a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3333524782843946815, guid: 5c0dd40ed22d23c46adb9f1494e5077a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3333524782843946815, guid: 5c0dd40ed22d23c46adb9f1494e5077a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3333524782843946815, guid: 5c0dd40ed22d23c46adb9f1494e5077a,
         type: 3}
@@ -67,5 +86,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 123571166, guid: 5c0dd40ed22d23c46adb9f1494e5077a, type: 3}
+      propertyPath: MaxHits
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c0dd40ed22d23c46adb9f1494e5077a, type: 3}
+--- !u!1 &6417240325333126319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8121369354908132288, guid: 5c0dd40ed22d23c46adb9f1494e5077a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3006848145880641391}
+  m_PrefabAsset: {fileID: 0}
