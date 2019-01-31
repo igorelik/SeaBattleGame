@@ -10,8 +10,9 @@ public class PlayerInputController : MonoBehaviour
     private GameObject _torpedo;
     private TorpedoController _torpedoController;
     private int _torpedoAvailable;
-
     private Vector3 _originalTorpedoPosition;
+
+    public bool CanFire => _torpedoAvailable > 1;
 
     void Start()
     {
@@ -45,7 +46,7 @@ public class PlayerInputController : MonoBehaviour
             _torpedoController.IsMoving = true;
             _torpedoController = null;
             _torpedoAvailable--;
-            if (_torpedoAvailable > 0)
+            if (_torpedoAvailable > 1)
             {
                 StartCoroutine(CreateNewTorpedo());
             }
