@@ -46,6 +46,13 @@ MonoBehaviour:
   ExplosionPrefab: {fileID: 6261441701913415725, guid: 714a283afcfe94a419e0ac4c2b307ed3,
     type: 3}
   ExplosionEffect: {fileID: 8300000, guid: f13f3332fd2dde94cbc2c9a76dd99900, type: 3}
+  CharacterController: {fileID: 0}
+  WayPoints:
+  - {x: 17, y: -0.54, z: 50}
+  - {x: -12, y: -0.54, z: 50}
+  - {x: -100, y: -0.54, z: 400}
+  - {x: 50, y: -0.54, z: 400}
+  TurnDistance: 1
 --- !u!95 &124401
 Animator:
   serializedVersion: 3
@@ -136,27 +143,27 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
+    - target: {fileID: 400012, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
+    - target: {fileID: 400012, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
+    - target: {fileID: 400012, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
+    - target: {fileID: 400010, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
+    - target: {fileID: 400010, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
+    - target: {fileID: 400010, guid: 6d683fa5146e8c64e8e6c1272817ea13, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
